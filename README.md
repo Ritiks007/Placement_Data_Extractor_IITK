@@ -12,7 +12,6 @@ Code is written in [**Python3**](https://www.python.org/)
 
 To run:
 - Clone this repository.
-- Open the source.py file in a text editor.
-- Replace the \<username\> with your username and the \<password\> with the corresponding password in line 19 and 20 respectively.
 - Open the file location in terminal and run `python source.py`
-- Voila! All proforma will be extracted in a folder for you!
+- Enter the portal username and password
+- Voila! All proforma and stats will be extracted in folders for you!
