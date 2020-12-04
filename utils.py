@@ -62,8 +62,11 @@ def get_stats(c):
     print(res.url)
     stats = BeautifulSoup(res.content, 'html5lib').find('tbody').findAll('tr')
     print(len(stats))
-
-    stats_file = open('placements20-21/stats.csv', 'w',
+    file_path = 'placements20-21_stats/'
+    if not os.path.exists(os.path.dirname(file_path)):
+        os.makedirs(os.path.dirname(file_path))
+    
+    stats_file = open('placements20-21_stats/stats.csv', 'w',
                       newline='', encoding='utf-8')
     writer = csv.writer(stats_file)
     writer.writerow(["Name", "Roll no.", "Company Name",
