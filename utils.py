@@ -45,13 +45,14 @@ def get_proformas(c):
             res = c.get(com_link, headers=profile_headers)
             soup = BeautifulSoup(res.content, 'html5lib')
             data = soup.find('div', attrs={'class': 'text-center'})
-            data = bootstrap_cdn + data.prettify()
-            print(f"profile no. {i+1}/{count}")
+            data = bootstrap_cdn + '\n' + data.prettify()
+            # print the line
+            print(f"\rprofile no. {i+1}/{count}", end='')
             file = open(file_path, 'w', encoding='utf-8')
             file.write(data)
             file.close()
             sleep(0.5)
-    print("done")
+    print("\ndone")
 
 
 def get_stats(c):
